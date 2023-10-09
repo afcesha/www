@@ -34,7 +34,7 @@ class App extends React.Component{
 
   render() {
     return (<div >
-      <Header title ="todo list"/>
+      <Header title = "todo list"/>
         <main>
             <Deals deals={this.state.deals} onDelete={this.deleteDeal}/>
         </main>

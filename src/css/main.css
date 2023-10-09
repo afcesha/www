@@ -61,15 +61,16 @@ main .deal{
     background-color: rgb(65, 65, 65);
     padding: 20px;
 }
-main .delete{
+main .delete, .edit{
     margin-top: 2%;
+    margin-right: 5%;
     float:right;
     color: white;
     cursor: pointer;
     transform: scale(2);
     transition: all 0.3s ease;
 }
-main .delete:hover{
+main .delete:hover, .edit:hover{
     opacity: 0.5;
     transform: scale(2.5);
 }
