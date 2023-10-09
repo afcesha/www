@@ -6,7 +6,7 @@ class Deals extends React.Component{
       if(this.props.deals.length>0)
         return(<div>
             {this.props.deals.map((el) => (
-            <Deal onDelete={this.props.onDelete} key={el.id} deal={el}/>
+            <Deal onEdit={this.props.onEdit} onDelete={this.props.onDelete} key={el.id} deal={el}/>
             ))}
           </div>
         )

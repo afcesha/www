@@ -30,13 +30,14 @@ class App extends React.Component{
     }
     this.addDeal = this.addDeal.bind(this)
     this.deleteDeal = this.deleteDeal.bind(this)
+    this.editDeal = this.editDeal.bind(this)
    }
 
   render() {
     return (<div >
       <Header title = "todo list"/>
         <main>
-            <Deals deals={this.state.deals} onDelete={this.deleteDeal}/>
+            <Deals deals={this.state.deals} onEdit={this.editDeal} onDelete={this.deleteDeal}/>
         </main>
         <aside>
           <AddDeal onAdd={this.addDeal}/>
@@ -48,6 +49,14 @@ class App extends React.Component{
   deleteDeal(id){
     this.setState({
       deals: this.state.deals.filter((el)=> el.id !== id)
+    })
+  }
+
+  editDeal(deal){
+    let allDeals = this.state.deals
+    allDeals[deal.id - 1] = deal
+    this.setState({deals: []}, () => {
+      this.setState({deals: [...allDeals]})
     })
   }
 

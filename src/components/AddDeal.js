@@ -2,6 +2,7 @@ import React from "react"
 
 
 class AddDeal extends React.Component{
+  dealAdd = {}
   constructor(props){
     super(props)
     this.state = {
@@ -19,11 +20,15 @@ class AddDeal extends React.Component{
             <input type="checkbox" id="isDid" onChange={(e) => this.setState({isDid: e.target.checked})}/>
             <button type="button" onClick={()=> {
               this.form.reset()
-              this.props.onAdd({
-              dealName: this.state.dealName,
-              date: `от ${this.state.date}`,
-              isDid: this.state.isDid,
-              })}
+              this.dealAdd={
+                dealName: this.state.dealName,
+                date: `от ${this.state.date}`,
+                isDid: this.state.isDid,
+              }
+              if(this.props.deal)
+                this.dealAdd.id = this.props.deal.id
+              this.props.onAdd(this.dealAdd)
+            }
             }>Добавить</button>
         </form>
     )

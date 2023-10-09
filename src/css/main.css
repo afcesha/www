@@ -28,8 +28,8 @@ aside{
     float: left;
 }
 
-aside form input:not([type="checkbox"]),
-aside form button{
+form input:not([type="checkbox"]),
+form button{
     width: 90%;
     padding: 15px 5%;
     font-family: 'Montserrat', sans-serif;
@@ -41,18 +41,18 @@ aside form button{
     outline: none;
     font-size: 15px;
 }
-aside form input[type="checkbox"]
+form input[type="checkbox"]
 {
     margin: 10px;
 }
 
-aside form button{
+form button{
     width: 100%;
     cursor: pointer;
     transition: all 500ms ease;
 }
 
-aside form button:hover{
+form button:hover{
     transform: scale(1.1);
 }
 
@@ -73,4 +73,17 @@ main .delete, .edit{
 main .delete:hover, .edit:hover{
     opacity: 0.5;
     transform: scale(2.5);
+}
+
+.deal form {
+    margin-top: 20px;
+}
+
+.deal form input,
+.deal form button{
+    background: #252525;
+}
+
+.deal form button:hover{
+    transform: scale(1.01);
 }
