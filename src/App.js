@@ -29,18 +29,26 @@ class App extends React.Component{
       ]
     }
     this.addDeal = this.addDeal.bind(this)
+    this.deleteDeal = this.deleteDeal.bind(this)
    }
 
   render() {
     return (<div >
       <Header title ="todo list"/>
         <main>
-            <Deals deals={this.state.deals}/>
+            <Deals deals={this.state.deals} onDelete={this.deleteDeal}/>
         </main>
         <aside>
           <AddDeal onAdd={this.addDeal}/>
         </aside>
     </div>)
+  }
+
+
+  deleteDeal(id){
+    this.setState({
+      deals: this.state.deals.filter((el)=> el.id !== id)
+    })
   }
 
   addDeal(deal){

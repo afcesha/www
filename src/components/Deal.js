@@ -7,7 +7,7 @@ class Deal extends React.Component{
     render() {
         return(
             <div className="deal">
-                <IoCloseCircleSharp className="delete"/>
+                <IoCloseCircleSharp onClick={() => this.props.onDelete(this.deal.id)} className="delete"/>
                 <h3>{this.deal.dealName}</h3>
                 <p>{this.deal.date}</p>
                 <b>{this.deal.isDid ? 'Выполнено' : 'Не выполнено'}</b>
